@@ -28,5 +28,5 @@ export function createElement(type, config, children) {
 npm start
 ```
 
-visit http://localhost:8080/
+visit with chrome http://localhost:8080/
 
