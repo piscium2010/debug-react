@@ -23,11 +23,16 @@ if (!fs.existsSync(outputPath)) {
 
 const write = fs.createWriteStream(zipPath)
 
+console.log(`from ${url}`)
+console.log(`downloading...`)
 request(url).pipe(write)
     .on('finish', function () {
+        console.log(`complete download`)
+        console.log(`unzip...`)
         fs.createReadStream(zipPath)
             .pipe(unzip.Extract({ path: tempPath }))
             .on('finish', function () {
+                console.log(`unzipped to ${tempPath}`)
                 for (let dir of fs.readdirSync(tempPath)) {
                     if (dir.match(/react-\d/)) {
                         let source = path.join(tempPath, dir)
@@ -35,5 +40,6 @@ request(url).pipe(write)
                         fs.removeSync(tempPath)
                     }
                 }
+                console.log(`move to ${outputPath}`)
             })
     })

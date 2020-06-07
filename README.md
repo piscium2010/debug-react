@@ -9,6 +9,6 @@ yarn
 ```
 Specify react version
 ```
-yarn fetch v16.13.0
+yarn fetch v16.13.1
 npm start
 ```
