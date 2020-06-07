@@ -1,0 +1,52 @@
+{
+	"name": "debug-react",
+	"version": "1.0.0",
+	"description": "迅速搭建React源码调试环境，可指定版本",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"overwrite:0": "babel overwrite/invariant.js --out-dir code/packages/shared/ --copy-files",
+		"overwrite:1": "babel overwrite/ReactFiberHostConfig.js --out-dir code/packages/react-reconciler/src/ --copy-files",
+		"overwrite": "npm run overwrite:0 && npm run overwrite:1",
+		"start": "npm run overwrite && webpack-dev-server --config webpack.dev.js",
+		"fetch": "node download"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-router-dom": "^5.2.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.10.1",
+		"@babel/core": "^7.10.2",
+		"@babel/plugin-proposal-class-properties": "^7.10.1",
+		"@babel/plugin-proposal-decorators": "^7.10.1",
+		"@babel/plugin-syntax-dynamic-import": "^7.8.3",
+		"@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+		"@babel/plugin-transform-flow-strip-types": "^7.10.1",
+		"@babel/preset-env": "^7.10.2",
+		"@babel/preset-react": "^7.10.1",
+		"babel-loader": "^8.1.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^3.5.3",
+		"file-loader": "^6.0.0",
+		"fs-extra": "^9.0.1",
+		"html-loader": "^1.1.0",
+		"html-webpack-plugin": "^4.3.0",
+		"less": "^3.11.3",
+		"less-loader": "^6.1.0",
+		"less-plugin-clean-css": "^1.5.1",
+		"mini-css-extract-plugin": "^0.9.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"style-loader": "^1.2.1",
+		"terser-webpack-plugin": "^3.0.3",
+		"unzip": "^0.1.11",
+		"url-loader": "^4.1.0",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-dev-server": "^3.11.0",
+		"webpack-merge": "^4.2.2"
+	}
+}
