@@ -9,8 +9,24 @@ git clone https://github.com/piscium2010/debug-react.git
 cd debug-react
 yarn
 ```
-Specify react version
+fetch specified react version
 ```
 yarn fetch v16.13.1
+```
+
+### Debug
+code/packages/react/src/ReactElement.js
+```
+export function createElement(type, config, children) {
+  debugger
+  let propName;
+  ...
+```
+
+### Run
+```
 npm start
 ```
+
+visit http://localhost:8080/
+
