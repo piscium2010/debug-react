@@ -1,0 +1,4 @@
+{
+    "search.useIgnoreFiles": false,
+    "typescript.check.npmIsInstalled": false,
+}

@@ -11,7 +11,8 @@ module.exports = merge(common, {
     devServer: {
         contentBase: [path.join(__dirname, 'public')],
         historyApiFallback: true,
-        hot: true
+        hot: true,
+        port: 3017
     },
     resolve: {
         alias: {
