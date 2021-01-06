@@ -6,14 +6,16 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"overwrite:0": "babel overwrite/invariant.js --out-dir code/packages/shared/ --copy-files",
 		"overwrite:1": "babel overwrite/ReactFiberHostConfig.js --out-dir code/packages/react-reconciler/src/ --copy-files",
-		"overwrite": "npm run overwrite:0 && npm run overwrite:1",
-		"start": "npm run overwrite && webpack-dev-server --config webpack.dev.js",
+		"overwrite:2": "babel overwrite/ReactSharedInternals.js --out-dir code/packages/shared/ --copy-files",
+		"overwrite": "npm run overwrite:0 && npm run overwrite:1 && npm run overwrite:2",
+		"start": "webpack-dev-server --config webpack.dev.js",
 		"fetch": "node download"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"extract-zip": "^2.0.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1"
 	},
